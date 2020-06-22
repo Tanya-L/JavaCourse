@@ -1,10 +1,9 @@
 package tl222xy_assign1.print;
+// Write a program Print.java that prints the phrase Write once, run everywhere!
 
 public class Print {
 
     public static void main(String[] args) {
-        // Write a program Print.java that prints the phrase Write once, run everywhere!
-
         //! on one line,
         System.out.println("Write once, run everywhere!");
 
