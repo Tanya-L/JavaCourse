@@ -8,8 +8,6 @@ package tl222xy_assign2_int;
 public class testInt {
 
     // Data members or fields
-    Boolean isLargerThan = false;
-    Boolean isEqualTo = false;
     static Int i1 = new Int(5);
     static Int i2 = new Int(2);
     static Int sum = i1.plus(i2);
