@@ -1,8 +1,11 @@
 /**
- * Dices.java
+ * Date: 2020-07-04.
+ * File Name: Dices.java
+ * Author: Tetiana Lytovchenko
  *
- * @author Tetiana Lytovchenko
+ * Copyright (c): Tetiana Lytovchenko
  */
+
 package tl222xy_assign3_dices;
 
 import java.util.Random;
@@ -31,6 +34,14 @@ import java.util.Random;
  */
 
 public class Dices {
+    /**
+     * Class Description: This class provides logic
+     * for solving the problem using the Random method from the java.util library.
+     *
+     * @version 1.0 04 July 2020
+     * @author Tetiana Lytovchenko
+     */
+
     public static int N = 10000;  // total rolls
 
     public static int roll(Random r) {
