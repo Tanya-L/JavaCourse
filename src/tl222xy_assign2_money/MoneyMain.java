@@ -24,8 +24,8 @@ public class MoneyMain {
         Money m1 = new Money(2, 0);
         Money m2 = new Money(5, 05);
 
-        System.out.println("Money 1 is: $" + m1);
-        System.out.println("Money 2 is: $" + m2);
+        System.out.println("Money 1 is: " + m1);
+        System.out.println("Money 2 is: " + m2);
 
         System.out.println("Money1's dollars are: " + m1.dollars);
         System.out.println("Money1's cents are: " + m1.cents);
