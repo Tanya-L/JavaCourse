@@ -19,7 +19,7 @@ import java.util.Date;
 public class PersonMain {
     /**
      * Class Description: This class provides logic
-     * for solving the problem using the Random method from the java.util library.
+     * for solving exercise.
      *
      * @version 1.0 04 July 2020
      * @author Tetiana Lytovchenko
