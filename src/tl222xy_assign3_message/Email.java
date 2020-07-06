@@ -1,28 +1,16 @@
 /**
- * Date: 2020-07-04.
- * File Name: Message.java
+ * Date: 2020-07-07.
+ * File Name: Email.java
  * Author: Tetiana Lytovchenko
  * Copyright (c): Tetiana Lytovchenko
  */
 package tl222xy_assign3_message;
 
 /**
- * Next, define a class named SMS that is derived from the class Message and includes
- * following:
- * • an instance variables for the recipientContactNo.
- *      - Decide a suitable type for the recipientContactNo yourself and document
- * reasoning for the chosen type by adding comments to the variable
- * declaration.
- * • A constructor with a parameter for recipientContactNo and another parameter for the
- * inherited field text
- * • implement accessor and mutator methods for the recipientContactNo.
- * • textual contents of the SMS message should be stored in the inherited variable text.
- * • toString method should be redefined so that it returns values of both
- * recipientContactNo and the inherited text field
  * Similarly, define another class named Email that is also derived from the Message class.
  * The Email class includes following:
  * • three instance variables to record the Email sender, receiver, and subject data.
- * o Decide a suitable type for each of the three variables, and document
+ * -  Decide a suitable type for each of the three variables, and document
  * reasoning for the chosen type by adding comments to each variable
  * declaration.
  * • A constructor with a parameter for each of the above specified instance variables and
@@ -35,29 +23,60 @@ package tl222xy_assign3_message;
  * suitable representation of the Email object, that is it should return a String containing
  * values of all the three instance variables sender, receiver, subject, and the inherited
  * text field
- * We require a method named encode that produces and returns encoded form of the textual
- * contents property of all the three classes without making any changes in the original text.
- * This means original textual contents should remain unchanged. It is you who should decide
- * which of the three classes should actually contain the encode method.
- * The encoding is done by replacing each alphabetic character (aA to zZ) with the character
- * that comes after it. For example, if the message contains character B or b, it should be
- * replaced by C or c accordingly, while Z or z should be replaced with an A or a. If the
- * original text is “This is Java!”, then the encoded message returned by the encode method
- * should be “Uijt jt Kbwb!”. Any non-alphabetic characters (all characters other than aA to
- * zZ), such as !, #, @, etc., in the original text should remain unchanged.
- * Finally, define a test program MessagingMain.java that creates objects of all the three
- * classes, Message, SMS, and Email, and demonstrate use of all their member methods and
- * the encode method.
- * */
-
-
-public class Sms {
-/**
- * Class Description: This class provides logic
- * for solving exercise.
- *
- * @version 1.0 04 July 2020
- * @author Tetiana Lytovchenko
  */
+
+
+public class Email extends Message {
+    /**
+     * Class Description: This class provides logic
+     * for solving exercise.
+     *
+     * @version 1.0 07 July 2020
+     * @author Tetiana Lytovchenko
+     */
+
+    String sender;
+    String recipient;
+    String subject;
+
+    public Email(String sender, String recipient, String subject, String text) {
+        super(text);
+        this.sender = sender;
+        this.recipient = recipient;
+        this.subject = subject;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    @Override
+    public String toString() {
+        return "This is Email from: " +
+                "sender='" + sender + '\'' +
+                ", recipient='" + recipient + '\'' +
+                ", subject='" + subject + '\'' +
+                ", text='" + this.text + '\'';
+    }
 }
 
