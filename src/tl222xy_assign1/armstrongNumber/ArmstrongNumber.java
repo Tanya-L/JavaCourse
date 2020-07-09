@@ -14,20 +14,39 @@ public class ArmstrongNumber {
     //+ 27) equals the number itself (153).
     int num;
 
-    int armNum(int n, int a) {
+    int armNum(int n, int nLength, int accum) {
         if (n != 0) {
             num = n % 10;
-            a = a + (num * num * num);
+            accum = accum + integerPower(num, nLength);
             n /= 10;
-            return armNum(n, a);
+            return armNum(n, nLength, accum);
         }
-        return a;
+        return accum;
+    }
+
+    // Raise n to pow'th power
+    static int integerPower(int n, int pow) {
+        int result = 1;
+        for (int i = 0; i < pow; i++) {
+            result *= n;
+        }
+        return result;
+    }
+
+    // Count digits in the integer n
+    static int countDigits(int n) {
+        int nDigits = 0;
+        while (n != 0) {
+            n /= 10;
+            nDigits++;
+        }
+        return nDigits;
     }
 
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
-        ArmstrongNumber A = new ArmstrongNumber();
+        ArmstrongNumber myProgram = new ArmstrongNumber();
         int arm;
 
         while (true) {
@@ -39,11 +58,10 @@ public class ArmstrongNumber {
             int stopRange = s.nextInt();
 
             for (int number = startRange; number <= stopRange; number++) {
-                arm = A.armNum(number, 0);
+                arm = myProgram.armNum(number, countDigits(number), 0);
                 if (arm == number) {
-                    System.out.println("The Armstrong numbers between the given range are: " + number);
-                };
-
+                    System.out.println("Armstrong number in the given range: " + number);
+                }
             }
             // Repeat
             System.out.print("Do you want to repeat? (Y/N): ");
