@@ -55,6 +55,43 @@ public class BankAccount {
     public String AccountNum;
     public int InitialBalance;
 
+/******************************/
+    // ToString is used when testing Assignment 4 Stack
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "CustomerID= '" + CustomerID + '\'' +
+                ", AccountNum= '" + AccountNum + '\'' +
+                ", InitialBalance= " + InitialBalance +
+                '}';
+    }
+
+    // For testing Assign 4 Stack
+    public BankAccount(String customerID, String accountNum, int initialBalance) {
+
+        // Customer ID must start with a letter (Aa-zZ), which is then followed by three digits.
+        if (!isValidCustomerID(customerID)) {
+            throw new IllegalArgumentException();
+        }
+        CustomerID = customerID;
+
+        // Account number must be of seven digits.
+        if (!isValidAccountNum(accountNum)) {
+            throw new IllegalArgumentException();
+        }
+        AccountNum = accountNum;
+
+
+        // Initial balance must be equal to or higher than 1000.
+        if (initialBalance < 1000) {
+            throw new IllegalArgumentException();
+        }
+        InitialBalance = initialBalance;
+    }
+
+    /******************************/
+
+
     public BankAccount() {
         CustomerID = inputCustomerId();
         AccountNum = inputAccountNum();
