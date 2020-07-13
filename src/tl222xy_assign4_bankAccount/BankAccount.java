@@ -76,7 +76,7 @@ public class BankAccount {
                 return initialBalance;
             } catch (IllegalArgumentException e) {
                 System.out.println("Initial balance must be equal to or higher than 1000");
-                System.out.println("Input Again");
+                System.out.println("Input Again: ");
             }
         } // infinite loop
     }
@@ -95,7 +95,7 @@ public class BankAccount {
                 return accountNum;
             } catch (IllegalArgumentException e) {
                 System.out.println("Incorrect Account Number. The Account Number must be of seven digits");
-                System.out.println("Input Again");
+                System.out.println("Input Again: ");
             }
         } // infinite loop
     }
@@ -108,7 +108,7 @@ public class BankAccount {
         while (true) {
             try {
                 Scanner s = new Scanner(System.in);
-                System.out.print("Enter customer ID :");
+                System.out.print("Enter customer ID: ");
                 String customerID = s.nextLine();
 
                 // Customer ID must start with a letter (Aa-zZ), which is then followed by three digits.
@@ -120,21 +120,13 @@ public class BankAccount {
             } catch (IllegalArgumentException e) {
                 System.out.println("Incorrect Customer ID. The customer ID must start with " +
                         "a letter followed by three digits.");
-                System.out.println("Input Again");
+                System.out.println("Input Again: ");
             }
         } // infinite loop
     }
 
     private static boolean isValidCustomerID(String customerID) {
         return customerID.matches("[A-Za-z]\\d\\d\\d");
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Welcome to the Bank of Students, By the Students, for the Students! ");
-        BankAccount ba = new BankAccount();
-
-        System.out.println("Enter balance: " + ba.InitialBalance);
-        System.out.println("Congratulation, your account has been created successfully!");
     }
 
 }
