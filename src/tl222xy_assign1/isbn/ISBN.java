@@ -25,19 +25,21 @@ public class ISBN {
 
         // Enter a 9-digits integer number
         System.out.print("Please, enter the first 9 digits of an ISBN as a integer: ");
-        String number = s.next();
+        int number = s.nextInt();
+        int originalNumber = number; // save a copy because number is destroyed
         int sum = 0;
-        for (int i = 1; i <= number.length(); ++i) {
-            int digit = number.charAt(i - 1) - '0';
+        for (int i = 9; i >= 1; --i) {
+            int digit = number % 10;
             sum += (i * digit);
+            number /= 10;
         }
 
         // Sum of the digits of the integer number
         int d10 = (sum % 11);
         if (d10 == 10) {
-            System.out.println("The ISBN-10 number is:" + number + "X");
+            System.out.println(String.format("The ISBN-10 number is: %09dX", originalNumber));
         } else {
-            System.out.println(("The ISBN-10 number is: " + number) + d10);
+            System.out.println(String.format("The ISBN-10 number is: %09d%d", originalNumber, d10));
         }
     }
 }
